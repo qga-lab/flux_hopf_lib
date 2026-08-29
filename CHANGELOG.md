@@ -10,6 +10,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Planned
 - Companion WebGPU / shaders.com explorer consuming `export_fiber_curves` (scaffolded)
 
+## [0.3.0] — 2026-08-29
+
+### Changed
+- **Breaking (Hopf convention):** `hopf.fibration.hopf_map` is the classical
+  \(S^3\to S^2\) map matching QGA Chapter 2:
+  \(y=(2(x_1 x_3+x_2 x_4),\,2(x_1 x_4-x_2 x_3),\,x_1^2+x_2^2-x_3^2-x_4^2)\).
+  On unit 4-vectors this already lands on \(S^2\); there is no
+  output-normalization. Alias `hopf_map_classical`.
+- The old 3-component formula \(y=(x_1^2-x_2^2,\,2x_1 x_2,\,2(x_3 x_4+x_1 x_2))\)
+  is `legacy_portal_map` and is **not** called Hopf. `kingdom.core.hopf`
+  re-exports this module — do not fork the formula.
+
+### Migration
+- Call `hopf_map` / `hopf_map_classical` for the Chapter 2 map.
+- Call `legacy_portal_map` only if a pin must stay bit-identical to ≤0.2.6 numbers.
+- Tests: common-phase fiber constancy; \(h(0,0,1,0)=(0,0,-1)\); unit input is
+  not re-normalized by \(\|y\|\).
+
 ## [0.2.6] — 2026-07-12
 
 ### Fixed
@@ -110,7 +128,9 @@ Initial public foundation for the Hopf / flux / quaternion / conduit ecosystem.
 - Consumer repos and HF Spaces pin `@v0.1.0` (git) until PyPI install is preferred.
 - Breaking changes to κ / R / PDE conventions require a minor or major bump and pin updates.
 
-[Unreleased]: https://github.com/kinaar8340/flux_hopf_lib/compare/v0.2.5...HEAD
+[Unreleased]: https://github.com/kinaar8340/flux_hopf_lib/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.3.0
+[0.2.6]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.6
 [0.2.5]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.5
 [0.2.4]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.4
 [0.2.3]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.3

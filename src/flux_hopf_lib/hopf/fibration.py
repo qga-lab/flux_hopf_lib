@@ -32,18 +32,70 @@ def hopf_coordinates(
     return x1, x2, x3, x4
 
 
+_HOPF_ZERO_TOL = 1e-14
+
+
 def hopf_map(
     x1: Array,
     x2: Array,
     x3: Array,
     x4: Array,
 ) -> tuple[Array, Array, Array]:
-    """Standard Hopf fibration projection S³ → S²."""
+    r"""Classical real Hopf map \(S^3\to S^2\) (QGA Chapter 2; one formula).
+
+    Identify \(z_1 = x_1 + i x_2\), \(z_2 = x_3 + i x_4\). Then
+    \(y_1 = 2(x_1 x_3 + x_2 x_4)\), \(y_2 = 2(x_1 x_4 - x_2 x_3)\),
+    \(y_3 = x_1^2 + x_2^2 - x_3^2 - x_4^2\).
+
+    On unit 4-vectors this already lands on \(S^2\); the output is **not**
+    re-normalized by \(\|y\|\). Non-unit input is a numerical guard: the map
+    is homogeneous of degree 2, so we divide by \(\|q\|^2\). Same formula as
+    ``qga.lib.hopf_lattice.hopf_map``; do not fork.
+    """
+    x1 = np.asarray(x1, dtype=float)
+    x2 = np.asarray(x2, dtype=float)
+    x3 = np.asarray(x3, dtype=float)
+    x4 = np.asarray(x4, dtype=float)
+    y1 = 2.0 * (x1 * x3 + x2 * x4)
+    y2 = 2.0 * (x1 * x4 - x2 * x3)
+    y3 = x1 * x1 + x2 * x2 - x3 * x3 - x4 * x4
+    n2 = x1 * x1 + x2 * x2 + x3 * x3 + x4 * x4
+    scale = np.maximum(n2, _HOPF_ZERO_TOL)
+    return y1 / scale, y2 / scale, y3 / scale
+
+
+def hopf_map_classical(
+    x1: Array,
+    x2: Array,
+    x3: Array,
+    x4: Array,
+) -> tuple[Array, Array, Array]:
+    """Alias of ``hopf_map`` — one convention everywhere."""
+    return hopf_map(x1, x2, x3, x4)
+
+
+def legacy_portal_map(
+    x1: Array,
+    x2: Array,
+    x3: Array,
+    x4: Array,
+) -> tuple[Array, Array, Array]:
+    """Deprecated 3-component formula previously mislabeled Hopf.
+
+    Not a Hopf map: ignores ``(x3, x4)`` in ``y1, y2``, vanishes at
+    ``(0,0,1,0)`` before the ``||y||`` kludge, and is not constant on
+    structure-group fibers. Kept only so a portal pin can stay bit-identical.
+    """
+    x1 = np.asarray(x1, dtype=float)
+    x2 = np.asarray(x2, dtype=float)
+    x3 = np.asarray(x3, dtype=float)
+    x4 = np.asarray(x4, dtype=float)
     y1 = x1**2 - x2**2
     y2 = 2.0 * x1 * x2
     y3 = 2.0 * (x3 * x4 + x1 * x2)
-    norm = np.sqrt(y1**2 + y2**2 + y3**2) + 1e-12
-    return y1 / norm, y2 / norm, y3 / norm
+    n = np.sqrt(y1**2 + y2**2 + y3**2)
+    n = np.maximum(n, 1e-14)
+    return y1 / n, y2 / n, y3 / n
 
 
 def hopf_map_from_angles(

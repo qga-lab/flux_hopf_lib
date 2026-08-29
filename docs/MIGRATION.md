@@ -1,5 +1,20 @@
 # Migrating consumers to flux_hopf_lib
 
+## Hopf map (0.3.0)
+
+`hopf.fibration.hopf_map` is the classical real map (QGA Chapter 2). Numerical
+output **changed** relative to ≤0.2.6. The old three-component formula is
+`legacy_portal_map` and is not a Hopf map.
+
+```python
+from flux_hopf_lib.hopf import hopf_map, hopf_map_classical, legacy_portal_map
+
+# h(0,0,1,0) == (0, 0, -1); constant on common-phase fibers
+```
+
+Pin `flux-hopf-lib==0.2.6` only if you need the old numbers; prefer calling
+`legacy_portal_map` by name. `kingdom.core.hopf` re-exports this module.
+
 ## Status (2026-07)
 
 | Consumer | Migration |
