@@ -34,10 +34,13 @@ from flux_hopf_lib.constants import (
     W_G_LOCK,
 )
 
-__version__ = "0.3.0"
+from flux_hopf_lib.quaternion.hurwitz import HURWITZ_UNITS
+
+__version__ = "0.3.1"
 
 __all__ = [
     "__version__",
+    "HURWITZ_UNITS",
     "PHI",
     "E",
     "PI",

@@ -1,7 +1,7 @@
 # flux_hopf_lib
 
 Spine: [`qga`](https://github.com/kinaar8340/qga) — manuscript + pedagogical Python  
-Shared math: this repo — SoT for Hopf / quaternion  
+Shared math: this repo — SoT for Hopf / quaternion / Hurwitz 24  
 Engine: [`qga_engine`](https://github.com/kinaar8340/qga_engine) (scenes, Rust math) · [`qga_gpu`](https://github.com/kinaar8340/qga_gpu) (frame)  
 This repo: shared primitives. Not QGA book labs and not a GPU runtime.
 
@@ -14,7 +14,19 @@ This repo: shared primitives. Not QGA book labs and not a GPU runtime.
 ([kinaar8340](https://github.com/kinaar8340)). Tagged `qga` and `vqc` so
 [topic:qga](https://github.com/kinaar8340?tab=repositories&q=topic:qga) includes the math core.
 
-**Version:** [`0.3.0`](https://github.com/kinaar8340/flux_hopf_lib) · **Role:** single source of truth for foundational math.
+**Version:** [`0.3.1`](https://github.com/kinaar8340/flux_hopf_lib) · **Role:** single source of truth for foundational math.
+
+### Hurwitz 24 and Hopf (convention)
+
+`q = (x₁, x₂, x₃, x₄) = (w, x, y, z)`. The 24 Hurwitz units are ±1, ±i, ±j, ±k
+(minus then plus on each axis), then `(±1±i±j±k)/2` in `itertools.product`
+order (last index fastest). Cardinality 24 is a theorem. That listing order is
+a Software fact of this package (`HURWITZ_UNITS`, fixture `hurwitz_units_v1`).
+
+Hopf map on those units is the Chapter 2 formula in `hopf_map`:
+`y₁=2(x₁x₃+x₂x₄)`, `y₂=2(x₁x₄−x₂x₃)`, `y₃=x₁²+x₂²−x₃²−x₄²`. Unit input is
+**not** re-normalized by `‖y‖`. Fixture `hopf_hurwitz_v1`. `legacy_portal_map`
+is not Hopf.
 
 Specialized experiments, Gradio portals, and full model stacks stay in consumer
 repos. Consumers depend on **this package**, not on each other, for shared
@@ -149,7 +161,7 @@ print(out["identity_survival"])
 | Object | SoT | Not here |
 |--------|-----|----------|
 | `hopf_map` (Ch. 2 classical), `Quaternion` | this package | a second formula in a visual crate |
-| `HURWITZ_UNITS` | `qga/lib` today; landing here as classical geometry | a GPU constant |
+| `HURWITZ_UNITS` | this package | a GPU constant; a second listing in `qga-math` |
 | QGA book labs (`candidate_adjacency`, topograph classifier) | [`qga/lib`](https://github.com/kinaar8340/qga) | this package |
 | `W_g = 350/π` | Hypothesis; attack in [`op5`](https://github.com/kinaar8340/op5) | a lattice theorem |
 

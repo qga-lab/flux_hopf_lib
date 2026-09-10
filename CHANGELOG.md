@@ -10,6 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Planned
 - Companion WebGPU / shaders.com explorer consuming `export_fiber_curves` (scaffolded)
 
+## [0.3.1] — 2026-09-10
+
+### Added
+- `HURWITZ_UNITS`: the 24 Hurwitz units of norm 1. Coordinates
+  `(x1,x2,x3,x4)=(w,x,y,z)`. Order is a Software fact; cardinality 24 is a theorem.
+- Golden fixtures `fixtures/hurwitz_units_v1.json` and
+  `fixtures/hopf_hurwitz_v1.json` (classical Chapter 2 Hopf map, no `||y||`
+  renormalize on unit input).
+
+### Convention
+The Hopf map on those units is the QGA Chapter 2 formula already in `hopf_map`.
+Do not treat `legacy_portal_map` as Hopf.
+
 ## [0.3.0] — 2026-08-29
 
 ### Changed

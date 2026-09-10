@@ -10,8 +10,10 @@ from flux_hopf_lib.quaternion.core import (
     rodrigues_rotation,
     small_rotor,
 )
+from flux_hopf_lib.quaternion.hurwitz import HURWITZ_UNITS
 
 __all__ = [
+    "HURWITZ_UNITS",
     "Quaternion",
     "q_mult",
     "q_conj",
