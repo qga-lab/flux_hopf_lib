@@ -53,7 +53,7 @@ Install `flux-hopf-lib` via git URL (or tag) in Space `requirements.txt`:
 When changing `R_RESIDUAL`, `DEFAULT_KAPPA`, or λt conventions, **tag a release**
 and update mystery RESULTS / notes so historical JSON remains interpretable.
 
-Current baseline: **v0.2.2** (PyPI).
+Current baseline: **v0.3.0** (PyPI).
 
 ## Related docs
 

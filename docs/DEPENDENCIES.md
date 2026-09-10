@@ -51,6 +51,7 @@ flux-hopf-lib @ git+https://github.com/kinaar8340/flux_hopf_lib.git@v0.1.0
 | **vqc_sims_public** | `quaternion` (via `quaternion_core` shim) |
 | **hfb** | `hopf`, `flux.defects`, `utils.grid` |
 | **kingdom** | `constants`, `hopf`, `quaternion` |
+| **vqc_workbench** | `quaternion`, `hopf` (required `>=0.3.0`; no local fallback) |
 
 ## Version bumps that force consumer updates
 

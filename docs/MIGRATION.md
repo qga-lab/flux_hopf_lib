@@ -25,8 +25,25 @@ Pin `flux-hopf-lib==0.2.6` only if you need the old numbers; prefer calling
 | vqc_sims_public | **done** |
 | hfb | **done** |
 | kingdom | **done** |
+| vqc_workbench | **done** (required `flux-hopf-lib>=0.3.0`; `core/geometry.py` re-exports Quaternion / encode_shard; `hopf_map` calls `hopf_map_quaternion`) |
 
 Ongoing: more PDE helpers / invariants move into core as they prove shared.
+
+---
+
+## vqc_workbench
+
+Dropped the local `Quaternion` and the forked `hopf_map` (component/sign variant plus `‖y‖` renormalize). Install the core, then keep only a call-shape wrapper:
+
+```bash
+pip install -e ../flux_hopf_lib
+# or: flux-hopf-lib>=0.3.0
+```
+
+```python
+from flux_hopf_lib.quaternion import Quaternion, encode_shard
+from flux_hopf_lib.hopf import hopf_map_quaternion
+```
 
 ## Principle
 

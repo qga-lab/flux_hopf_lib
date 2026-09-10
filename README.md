@@ -8,7 +8,7 @@
 **Shared core library** for the Hopf / flux / quaternion / conduit ecosystem
 ([kinaar8340](https://github.com/kinaar8340)).
 
-**Version:** [`0.2.2`](https://github.com/kinaar8340/flux_hopf_lib) · **Role:** single source of truth for foundational math.
+**Version:** [`0.3.0`](https://github.com/kinaar8340/flux_hopf_lib) · **Role:** single source of truth for foundational math.
 
 Specialized experiments, Gradio portals, and full model stacks stay in consumer
 repos. Consumers depend on **this package**, not on each other, for shared
@@ -19,9 +19,9 @@ primitives.
 ```text
                     flux_hopf_lib  (core / SoT)
                            │
-     ┌─────────┬───────────┼───────────┬──────────┬────────────┐
-     ▼         ▼           ▼           ▼          ▼            ▼
-  mystery     toe      vqc_proto      hfb     kingdom   vqc_sims_public
+     ┌─────────┬───────────┼───────────┬──────────┬────────────┬──────────────┐
+     ▼         ▼           ▼           ▼          ▼            ▼              ▼
+  mystery     toe      vqc_proto      hfb     kingdom   vqc_sims_public  vqc_workbench
    HF ✓                HF ✓         HF ✓     HF ✓      (parent OAM suite)
 ```
 
@@ -47,7 +47,7 @@ pip install -e ".[torch]"
 
 ```bash
 # Production / HF Spaces / paper reproduction
-pip install flux-hopf-lib==0.2.2
+pip install flux-hopf-lib==0.3.0
 
 # Local core development (editable)
 pip install -e ../flux_hopf_lib
@@ -55,7 +55,7 @@ pip install -e ../flux_hopf_lib
 
 ```text
 # requirements.txt / pyproject.toml / HF Space
-flux-hopf-lib==0.2.2
+flux-hopf-lib==0.3.0
 ```
 
 - PyPI: https://pypi.org/project/flux-hopf-lib/
