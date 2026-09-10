@@ -179,7 +179,7 @@ pytest
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT — see [LICENSE](LICENSE). This is a copyright license only. It does not license U.S. Provisional Application 63/913,110. See [PATENTS.md](PATENTS.md).
 
 X: [@kinaar8340](https://x.com/kinaar8340)
 
