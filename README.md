@@ -1,12 +1,18 @@
 # flux_hopf_lib
 
+Spine: [`qga`](https://github.com/kinaar8340/qga) — manuscript + pedagogical Python  
+Shared math: this repo — SoT for Hopf / quaternion  
+Engine: [`qga_engine`](https://github.com/kinaar8340/qga_engine) (scenes, Rust math) · [`qga_gpu`](https://github.com/kinaar8340/qga_gpu) (frame)  
+This repo: shared primitives. Not QGA book labs and not a GPU runtime.
+
 [![PyPI](https://img.shields.io/pypi/v/flux-hopf-lib)](https://pypi.org/project/flux-hopf-lib/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/flux-hopf-lib)](https://pypi.org/project/flux-hopf-lib/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/kinaar8340/flux_hopf_lib/actions/workflows/ci.yml/badge.svg)](https://github.com/kinaar8340/flux_hopf_lib/actions/workflows/ci.yml)
 
 **Shared core library** for the Hopf / flux / quaternion / conduit ecosystem
-([kinaar8340](https://github.com/kinaar8340)).
+([kinaar8340](https://github.com/kinaar8340)). Tagged `qga` and `vqc` so
+[topic:qga](https://github.com/kinaar8340?tab=repositories&q=topic:qga) includes the math core.
 
 **Version:** [`0.3.0`](https://github.com/kinaar8340/flux_hopf_lib) · **Role:** single source of truth for foundational math.
 
@@ -139,6 +145,13 @@ print(out["identity_survival"])
 ```
 
 ## What belongs where
+
+| Object | SoT | Not here |
+|--------|-----|----------|
+| `hopf_map` (Ch. 2 classical), `Quaternion` | this package | a second formula in a visual crate |
+| `HURWITZ_UNITS` | `qga/lib` today; landing here as classical geometry | a GPU constant |
+| QGA book labs (`candidate_adjacency`, topograph classifier) | [`qga/lib`](https://github.com/kinaar8340/qga) | this package |
+| `W_g = 350/π` | Hypothesis; attack in [`op5`](https://github.com/kinaar8340/op5) | a lattice theorem |
 
 | In **flux_hopf_lib** (core) | In **leaf** repos |
 |-----------------------------|-------------------|
