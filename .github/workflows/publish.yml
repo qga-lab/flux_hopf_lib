@@ -1,7 +1,7 @@
 # Trusted Publishing (OIDC) — no API tokens in the repo.
 #
 # PyPI / TestPyPI pending publishers must match:
-#   Repository: kinaar8340/flux_hopf_lib
+#   Repository: qga-lab/flux_hopf_lib
 #   Workflow:   publish.yml
 #   Environment: pypi  |  testpypi
 #

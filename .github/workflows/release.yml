@@ -45,7 +45,7 @@ jobs:
           else:
               body = (
                   f"Release **{ver}** of flux-hopf-lib.\n\n"
-                  f"See [CHANGELOG.md](https://github.com/kinaar8340/flux_hopf_lib/blob/main/CHANGELOG.md).\n"
+                  f"See [CHANGELOG.md](https://github.com/qga-lab/flux_hopf_lib/blob/main/CHANGELOG.md).\n"
                   f"PyPI: https://pypi.org/project/flux-hopf-lib/{ver}/\n"
               )
           Path(out_path).write_text(body, encoding="utf-8")

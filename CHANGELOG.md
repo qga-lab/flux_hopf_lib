@@ -141,13 +141,13 @@ Initial public foundation for the Hopf / flux / quaternion / conduit ecosystem.
 - Consumer repos and HF Spaces pin `@v0.1.0` (git) until PyPI install is preferred.
 - Breaking changes to κ / R / PDE conventions require a minor or major bump and pin updates.
 
-[Unreleased]: https://github.com/kinaar8340/flux_hopf_lib/compare/v0.3.0...HEAD
-[0.3.0]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.3.0
-[0.2.6]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.6
-[0.2.5]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.5
-[0.2.4]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.4
-[0.2.3]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.3
-[0.2.2]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.2
-[0.2.1]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.1
-[0.2.0]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.2.0
-[0.1.0]: https://github.com/kinaar8340/flux_hopf_lib/releases/tag/v0.1.0
+[Unreleased]: https://github.com/qga-lab/flux_hopf_lib/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.3.0
+[0.2.6]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.2.6
+[0.2.5]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.2.5
+[0.2.4]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.2.4
+[0.2.3]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.2.3
+[0.2.2]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.2.2
+[0.2.1]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.2.1
+[0.2.0]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.2.0
+[0.1.0]: https://github.com/qga-lab/flux_hopf_lib/releases/tag/v0.1.0

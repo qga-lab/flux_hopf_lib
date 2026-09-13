@@ -9,7 +9,7 @@ Configured on:
 | [TestPyPI](https://test.pypi.org/) | `flux-hopf-lib` | `testpypi` | `publish.yml` |
 | [PyPI](https://pypi.org/) | `flux-hopf-lib` | `pypi` | `publish.yml` |
 
-GitHub repo: `kinaar8340/flux_hopf_lib`  
+GitHub repo: `qga-lab/flux_hopf_lib`  
 Pending publishers claim the project name on the **first successful OIDC upload**.
 
 ## Workflows

@@ -48,11 +48,11 @@ viz = ["matplotlib>=3.7", "plotly>=5.0"]
 all = ["flux-hopf-lib[torch,dev,viz]"]
 
 [project.urls]
-Homepage = "https://github.com/kinaar8340/flux_hopf_lib"
-Repository = "https://github.com/kinaar8340/flux_hopf_lib"
-Issues = "https://github.com/kinaar8340/flux_hopf_lib/issues"
-Changelog = "https://github.com/kinaar8340/flux_hopf_lib/blob/main/CHANGELOG.md"
-Documentation = "https://github.com/kinaar8340/flux_hopf_lib#readme"
+Homepage = "https://github.com/qga-lab/flux_hopf_lib"
+Repository = "https://github.com/qga-lab/flux_hopf_lib"
+Issues = "https://github.com/qga-lab/flux_hopf_lib/issues"
+Changelog = "https://github.com/qga-lab/flux_hopf_lib/blob/main/CHANGELOG.md"
+Documentation = "https://github.com/qga-lab/flux_hopf_lib#readme"
 PyPI = "https://pypi.org/project/flux-hopf-lib/"
 Ecosystem = "https://github.com/kinaar8340"
 

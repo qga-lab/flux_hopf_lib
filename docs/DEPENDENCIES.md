@@ -36,7 +36,7 @@ pip install -e ../flux_hopf_lib
 For HF Spaces / paper reproduction:
 
 ```text
-flux-hopf-lib @ git+https://github.com/kinaar8340/flux_hopf_lib.git@v0.1.0
+flux-hopf-lib @ git+https://github.com/qga-lab/flux_hopf_lib.git@v0.1.0
 # or once on PyPI:
 # flux-hopf-lib==0.1.0
 ```

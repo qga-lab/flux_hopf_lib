@@ -128,7 +128,7 @@ For HF Spaces, either vendor a wheel or add to `requirements.txt`:
 ```text
 # once published:
 # flux-hopf-lib==0.1.0
-# or git+https://github.com/kinaar8340/flux_hopf_lib.git@v0.1.0
+# or git+https://github.com/qga-lab/flux_hopf_lib.git@v0.1.0
 ```
 
 ---
